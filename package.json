@@ -1,0 +1,31 @@
+{
+  "name": "mobile_patient_mgt_sys",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "set NODE_ENV=production && node app.js",
+    "dev": "set NODE_ENV=development && nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akanowo/mobile_patient_mgt_sys.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akanowo/mobile_patient_mgt_sys/issues"
+  },
+  "homepage": "https://github.com/Akanowo/mobile_patient_mgt_sys#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
