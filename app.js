@@ -1,7 +1,8 @@
-const express = require('express');
-require('dotenv').config();
-const connectDB = require('./configs/dbConnect');
-const v1Router = require('./routes');
+import 'dotenv/config';
+import express from 'express';
+import errorHandler from './middlewares/errorHandler.js';
+import v1Router from './routes/index.js';
+import { dbConnect } from './configs/dbConnect.js';
 
 const PORT = process.env.PORT || 8080;
 
@@ -14,10 +15,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Initialize mongodb connection
-connectDB();
+dbConnect();
 
 // routes
 app.use('/api/v1', v1Router);
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
 	console.log(`App started on port ${PORT}`);
